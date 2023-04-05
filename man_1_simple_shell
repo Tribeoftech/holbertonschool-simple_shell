@@ -1,0 +1,93 @@
+.TH SIMPLE_SHELL "1" "April 5th, 2023" "Simple Shell Man Page"
+
+.SH NAME
+.B hsh \- Simple shell implementation of command line - A Holberton Project
+
+.SH SYNOPSIS
+.B ./hsh
+
+
+.SH DESCRIPTION
+.B hsh is a command language interpreter that shall execute commands read from a command line string, the standard input, or a specified file.
+
+.SH OVERVIEW
+
+.B Shell is a program that reads input, interprets the line, and executes the command. Works both in interactive and non-interactive modes.
+
+.SH DIRECTIONS
+
+.B INTERACTIVE MODE
+.PP
+To run hsh in interactive mode please follow the directions below:
+.P
+1.First compile all of the .c files in the repository by typing
+.P
+.RS
+.B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.P
+.RE
+2.Now you can enter the interactive mode by typing the following in the terminal
+.RS
+.B $ ./hsh
+.P
+.RE
+3.When executed properly, a prompt "$" will appear in the terminal line waiting for a command input.
+
+.B NON INTERACTIVE MODE
+.PP
+To run hsh in non-interactive mode, please follow the directions below:
+.P
+1.First compile all of the .c files in the repository by typing
+.P
+.RS
+.B $ gcc -Wall -Werror -Wextra -pendantic *.c -o hsh
+.P
+.RE
+2.Now you can enter the non-interactive mode by typing the following in the terminal
+.RS
+.B $ echo "/bin/ls" | ./hsh
+
+.SH BUILTINS
+.RS Information about the Builtin commands for hsh.
+.B exit
+.B - The hsh shell process is terminated.
+
+.B env
+.B - Prints all the environmental variables.
+
+.B ls
+.B - Lists all the files in the currently working directory.
+
+.B cd
+.B - Change directory
+
+.SH OPTIONS
+There are currently no options.
+
+.SH SEE ALSO
+.RE
+.B Command Search and Execution
+.RE
+sh(1), cd(1p), echo(1p), exit(1p)
+
+.RE
+.B System Interfaces volume
+.RE
+exit(3p), fork(3p), open(3p), exec(1p)
+
+
+.SH EXIT STATUS
+.B 0 - Everything was executed properly
+.PP
+.B 1 - Error
+
+.SH OUTPUT FILES
+.RE
+.B None.
+
+.SH BUGS
+No known bugs at the moment. Please contact if any unknown bugs are present
+
+.SH AUTHORS
+.B Chris Diggs <6112@holbertonstudents.com>
+.B Alex Dipboye <6113@holbertonstudents.com>
