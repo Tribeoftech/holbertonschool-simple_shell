@@ -32,7 +32,7 @@ int sh_env(void)
 		}
 		_putchar('\n');
 	}
-	return (0);
+return (0);
 }
 /**
  * sh_setenv - function to help setenv var

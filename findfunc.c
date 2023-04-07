@@ -7,7 +7,7 @@
  * @poopno: keeps track of exit codes
  * Return: 0 on success, 1 on fail
  */
-int func_finder(char **argv, char *buffer, int poopno)
+int func_finder(char **argv, char *buffer, int uhoh)
 {
 	int i;
 
@@ -24,7 +24,7 @@ int func_finder(char **argv, char *buffer, int poopno)
 	{ /* checks if its exit */
 		if (_strcmp(argv[0], "exit") == 0)
 		{
-			sh_exit(argv, buffer, poopno);
+			sh_exit(argv, buffer, uhoh);
 			return (1);
 		} /* runs through the struct */
 		for (i = 0; arr[i].func; i++)
