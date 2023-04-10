@@ -4,7 +4,7 @@
  * corresponding function that matches the user input
  * @argv: The string being checked
  * @buffer:Buffer being inputted
- * @poopno: keeps track of exit codes
+ * @uhoh: keeps track of exit codes
  * Return: 0 on success, 1 on fail
  */
 int func_finder(char **argv, char *buffer, int uhoh)
