@@ -28,8 +28,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **tokenizer(char *input_str);
 char *grab_name(char *full_line);
 char **env_tokenizer(char *input_str);
-int func_finder(char **argv, char *buffer, int poopno);
-int sh_exit(char **argv, char *buffer, int poopno);
+int func_finder(char **argv, char *buffer, int uh-oh);
+int sh_exit(char **argv, char *buffer, int uh-oh);
 
 /** Shell Helper **/
 int sh_env(void);
