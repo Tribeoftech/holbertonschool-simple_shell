@@ -4,7 +4,7 @@
  * main - prints the shell
  * @ac: void.
  * @av: the orginal argument for shell.
- * Return: uhoh.
+ * Return: zero.
  */
 int main(int ac, char **av)
 {
@@ -47,5 +47,5 @@ int main(int ac, char **av)
 		free(argv);
 	}
 	free(argv), free(buffer);
-	return (uhoh);
+	return (zero);
 }
