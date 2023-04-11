@@ -4,7 +4,7 @@
  * main - prints the shell
  * @ac: void.
  * @av: the orginal argument for shell.
- * Return: zero.
+ * Return: uhoh.
  */
 int main(int ac, char **av)
 {
