@@ -47,5 +47,5 @@ int main(int ac, char **av)
 		free(argv);
 	}
 	free(argv), free(buffer);
-	return (zero);
+	return (uhoh);
 }
