@@ -1,61 +1,52 @@
-#ifndef _SHELL_H_
-#define _SHELL_H_
+#ifndef SHELL_H
+#define SHELL_H
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
-#include <signal.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <sys/stat.h>
-#include <dirent.h>
 #include <errno.h>
+#include <sys/wait.h>
+#include <string.h>
 
-/** Global calling var**/
-extern char **environ;
-
-/** Helper Functions for String **/
-int _strlen(char *s);
-char *_strdup(char *str);
-int _strcmp(char *s1, char *s2);
-char *_strcat(char *dest, char *src);
-
-char **_getenv(char *env);
-int _putchar(char c);
-char *concat_all(char *name, char *sep, char *value);
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-char **tokenizer(char *input_str);
-char *grab_name(char *full_line);
-char **env_tokenizer(char *input_str);
-int func_finder(char **argv, char *buffer, int uhoh);
-int sh_exit(char **argv, char *buffer, int uhoh);
-
-/** Shell Helper **/
-int sh_env(void);
-int sh_setenv(char **argv);
-int sh_unsetenv(char **argv);
-int sh_cd(char **argv);
-int sh_alias(char **argv);
-char *validate_input(char **args, char **argv)
-int validate_only_spaces(char *input)
-
-void everything_free(char **pointer_array);
-int execute(char *xecutable, char **argv);
-void _puts(char *str);
-
-char *dir(char **argv, char **path_token, char **av, int counter);
-char *exe_maker(char *store, char **argv);
+#define BUFSIZE 100 /* constant buffer to use in toekn functions*/
+#define DELIM " \t\n" /* delimiters to check */
 
 /**
- * struct builtins - struct to handle builtins
- * @argv: The string
- * @func: The corresponding function
+ * struct choose_builtin - Builtin commands struct
+ * @name_builtin: Name of builtin command
+ * @func_builtin: Pointer to builtin command functions
  */
-typedef struct builtins
+typedef struct choose_builtin
 {
-	char *argv;
-	int (*func)();
-} builtins;
+	char *name_builtin;
+	int (*func_builtin)(char **, char *, int *);
+} choose_builtins_t;
 
-#endif /* SHELL_H */
+/* global variable to access the enviromment list */
+extern char **environ;
+
+/* execute commands */
+int hsh_execute(char *args[], char *argv[], int *exit_status);
+int hsh_execute_builtins(char *args[], char *input_stdin,
+		char *argv[], int *exit_status);
+
+/* validate inputs */
+char *validate_input(char *args[], char *argv[] __attribute__((unused)));
+int validate_only_spaces(char *input);
+
+/* tokenizers */
+char **hsh_tokenizer(char *input);
+char **tokenizer_path(char *input);
+
+/* builtin functions */
+int hsh_cd(char *args[], char *input_stdin, int *exit_status);
+int hsh_setenv(char *args[],  char *input_stdin, int *exit_status);
+int hsh_unsetenv(char **args,  char *input_stdin, int *exit_status);
+int hsh_env(char **args, char *input_stdin, int *exit_status);
+int hsh_exit(char **args, char *input_stdin, int *exit_status);
+
+/* helper functions*/
+char *str_concat(char *s1, char *s2);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+
+#endif
