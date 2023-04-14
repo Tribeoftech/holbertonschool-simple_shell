@@ -24,38 +24,4 @@ char *_strcat(char *dest, char *src);
 char **_getenv(char *env);
 int _putchar(char c);
 char *concat_all(char *name, char *sep, char *value);
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-char **tokenizer(char *input_str);
-char *grab_name(char *full_line);
-char **env_tokenizer(char *input_str);
-int func_finder(char **argv, char *buffer, int uhoh);
-int sh_exit(char **argv, char *buffer, int uhoh);
-
-/** Shell Helper **/
-int sh_env(void);
-int sh_setenv(char **argv);
-int sh_unsetenv(char **argv);
-int sh_cd(char **argv);
-int sh_alias(char **argv);
-char *validate_input(char **args, char **argv)
-int validate_only_spaces(char *input)
-
-void everything_free(char **pointer_array);
-int execute(char *xecutable, char **argv);
-void _puts(char *str);
-
-char *dir(char **argv, char **path_token, char **av, int counter);
-char *exe_maker(char *store, char **argv);
-
-/**
- * struct builtins - struct to handle builtins
- * @argv: The string
- * @func: The corresponding function
- */
-typedef struct builtins
-{
-	char *argv;
-	int (*func)();
-} builtins;
-
-#endif /* SHELL_H */
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)`
