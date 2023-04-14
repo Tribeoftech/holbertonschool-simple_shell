@@ -8,21 +8,6 @@
 #include <sys/wait.h>
 #include <string.h>
 
-<<<<<<< HEAD
-/** Global calling var**/
-extern char **environ;
-
-/** Helper Functions for String **/
-int _strlen(char *s);
-char *_strdup(char *str);
-int _strcmp(char *s1, char *s2);
-char *_strcat(char *dest, char *src);
-
-char **_getenv(char *env);
-int _putchar(char c);
-char *concat_all(char *name, char *sep, char *value);
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)`
-=======
 #define BUFSIZE 100 /* constant buffer to use in toekn functions*/
 #define DELIM " \t\n" /* delimiters to check */
 
@@ -65,4 +50,3 @@ char *str_concat(char *s1, char *s2);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
 #endif
->>>>>>> fb446fb0855acae1f83c0ec061e18218dcc85081
