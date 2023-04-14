@@ -37,6 +37,8 @@ int sh_setenv(char **argv);
 int sh_unsetenv(char **argv);
 int sh_cd(char **argv);
 int sh_alias(char **argv);
+char *validate_input(char **args, char **argv)
+int validate_only_spaces(char *input)
 
 void everything_free(char **pointer_array);
 int execute(char *xecutable, char **argv);
