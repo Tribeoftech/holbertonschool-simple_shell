@@ -33,7 +33,7 @@ char *str_concat(char *s1, char *s2)
 
 	j = j + 1; /*making room for the NULL terminator*/
 
-	s = malloc((i + j) * sizeof(char));/*stores the combined strings into "s" to dynamically allocate memory at runtime*/
+	s = malloc((i + j) * sizeof(char));/*stores the combined strings into "s" at runtime*/
 
 	if (s == NULL) /*if malloc fails, the function returns NULL*/
 		return (0);
@@ -66,7 +66,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	char *ptr1;
 	unsigned int i;
 
-	ptr1 = (char *)ptr; /*casting ptr to a char pointer , allows the function to treat memory block as an array of chars*/
+	ptr1 = (char *)ptr; /*casting ptr to a char pointer , allows the function to treat memory block of chars*/
 
 	if (ptr == NULL)/*checking if NULL, if it is returns a poniter to newly allocated memory block*/
 		return (malloc(new_size));
@@ -85,12 +85,12 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 
-	if (new_size > old_size)/*allocates a new memory block of size new_size copies contents of old memory block into the new one using loop then free old lock*/
+	if (new_size > old_size)/*allocates a new memory block of old memory block into the new one then free old lock*/
 	{
 		for (i = 0; i < old_size; i++)
 			s[i] = ptr1[i];
 	}
-	if (new_size < old_size)/*allocates a new memory block of size new_size copies necessary amount of data from old block to new one and free old memory block*/
+	if (new_size < old_size)/*copies necessary amount of data from old block to new one and free old memory block*/
 	{
 		for (i = 0; i < new_size; i++)
 			s[i] = ptr1[i];

@@ -22,7 +22,7 @@ int hsh_execute(char **args, char **argv, int *exit_status)
 	new_args = validate_input(args, argv);
 	if (strcmp(new_args, "Fail access") == 0)
 		return (1);
-	pid = fork(); /* create a duplicate process (child) to execute commands while shell continues to run */
+	pid = fork(); /* create a duplicate process to execute commands while shell continues to run */
 	if (pid == 0) /* if the current process is the child process, i.e. fork returns 0 */
 	{
 		/* pass execve the tokenized command and execute command, if it fails to execute it returns -1 */

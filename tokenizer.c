@@ -10,7 +10,7 @@
  */
 char **hsh_tokenizer(char *input)
 {
-	int buffer = BUFSIZE, newBuffer = 0, position = 0; /* initializes variables for the buffer size (buffer), a new buffer size in case a reallocation is needed (newBuffer), the current position in the array of tokens (position)*/
+	int buffer = BUFSIZE, newBuffer = 0, position = 0; /* initializes variables for the buffer size, a new buffer size in case a reallocation is needed*/
 	char **tokens = NULL, *token = NULL;
 	char **backup_tokens = NULL;
 
@@ -34,7 +34,7 @@ char **hsh_tokenizer(char *input)
 			newBuffer = BUFSIZE * 2; /* this will double the size of the buffer */
 			backup_tokens = tokens;
 			tokens = _realloc(tokens, buffer, newBuffer * sizeof(char *));
-			if (tokens == NULL) /* if failure, frees backup array of toekns, frees current token, and prints error*/
+			if (tokens == NULL) /* if failure, frees backup array of toekns and prints error*/
 			{
 				free(backup_tokens);
 				free(tokens);
@@ -68,7 +68,7 @@ char **tokenizer_path(char *input)
 		fprintf(stderr, "memory allocation error\n");
 		exit(EXIT_FAILURE);
 	}
-	/* tokenize the PATH string, checking for deliminter :and replace it with \0 and stores resulting tokens i nthe tokens array*/
+	/* tokenize the PATH string, checking for deliminter */
 	token = strtok(input, ":");
 	while (token != NULL)
 	{
