@@ -86,7 +86,7 @@ exit(3p), fork(3p), open(3p), exec(1p)
 .B None.
 
 .SH BUGS
-No known bugs at the moment. Please contact if any unknown bugs are present
+No known bugs at the moment. Please let us know if any unknown bugs are present
 
 .SH AUTHORS
 .B Chris Diggs <6112@holbertonstudents.com>
