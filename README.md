@@ -1,3 +1,4 @@
+![image](https://github.com/Tribeoftech/holbertonschool-simple_shell/assets/113186733/7abc9f04-33b0-44c8-a437-d5096c3ab4af)
 
 Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
